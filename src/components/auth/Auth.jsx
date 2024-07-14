@@ -34,7 +34,7 @@ const Auth = () => {
         Form.append("phone",createform.phone)
         Form.append("email",createform.email.toLowerCase())
         Form.append("password",createform.password)
-        axios.post("http://localhost/MY_PROJECTS/moto_project/auth",Form).then((res)=>{
+        axios.post("http://localhost/MY_PROJECTS/diamand/auth",Form).then((res)=>{
           if(res.data){
             toast.error("Email already exist try another one");
           }else{
@@ -57,7 +57,7 @@ const Auth = () => {
       const Form = new FormData();
       Form.append("email",loginform.email.toLowerCase());
       Form.append("password",loginform.password)
-      axios.post("http://localhost/MY_PROJECTS/moto_project/auth",Form).then((res)=>{
+      axios.post("http://localhost/MY_PROJECTS/diamand/auth",Form).then((res)=>{
           if (res.data === false) {
             toast.error("the email or password is incorrect try again !")
           }else{
@@ -76,14 +76,14 @@ const Auth = () => {
   }
   return (
     <>
-      <h1 className="text-red-900 font-bold text-center mt-5 text-[40px]">JAWA.</h1>
+      <h1 className=" textsh font-bold text-center mt-5 text-[40px]">Circa.</h1>
       <section className="w-[1/2] md:w-[850px] h-[450px]  absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-cols-1 md:grid-cols-2 place-items-center md:place-content-start">
         <nav className="w-[370px] md:w-[500px] h-[400px] back log2_radius grid place-content-center overflow-hidden">
           {switchform === 0 ? (
             <>
               {/* create account form  */}
               <form className="w-full h-[400px]  flex flex-col justify-around" onSubmit={Createaccountconfirmation}>
-                <h1 className="self-center font-bold text-red-800 text-[20px]">
+                <h1 className="self-center font-bold text-yellow-600 text-[20px]">
                   Create Account
                 </h1>
                 <div className="flex flex-col gap-2">
@@ -104,7 +104,7 @@ const Auth = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-[80px] sm:w-[120px] h-9 bg-red-900 border border-white shadow-sm rounded-md text-white self-center"
+                  className="w-[80px] sm:w-[120px] h-9 bg-yellow-600 border border-white shadow-sm rounded-md text-white self-center"
                 >
                   Sign Up
                 </button>
@@ -114,7 +114,7 @@ const Auth = () => {
             <>
               {/* login form */}
               <form className="w-full h-[400px]  flex flex-col justify-around" onSubmit={LoginFormConfirmation}>
-                <h1 className="self-center font-bold text-red-800 text-[20px]">Sign In</h1>
+                <h1 className="self-center font-bold text-yellow-600 text-[20px]">Sign In</h1>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="">Email</label>
                   <input type="Email" name="email" className="h-10 rounded-md focus:outline-none pl-2 bg-transparent back w-[300px]" placeholder="Email" onChange={LoginFormChange}/>
@@ -123,19 +123,19 @@ const Auth = () => {
                   <label htmlFor="">Password</label>
                   <input type="password" name="password" className="h-10 rounded-md focus:outline-none pl-2 bg-transparent back w-[300px]" placeholder="Password" onChange={LoginFormChange}/>
                 </div>
-                <button type="submit" className="w-[80px] sm:w-[120px] h-9 bg-red-900 border border-white shadow-sm rounded-md text-white self-center">Log In</button>
+                <button type="submit" className="w-[80px] sm:w-[120px] h-9 bg-yellow-600 border border-white shadow-sm rounded-md text-white self-center">Log In</button>
               </form>
             </>
           )}
         </nav>
-        <nav className="w-[370px] md:w-[500px] h-[400px] bg-red-900 log1_radius grid place-content-center overflow-hidden">
+        <nav className="w-[370px] md:w-[500px] h-[400px] bg-yellow-600 log1_radius grid place-content-center overflow-hidden">
           {switchform === 0 ? (
             <>
               {/* login message */}
               <div className="w-full h-[250px]   flex flex-col justify-around items-center">
                 <h1 className=" font-bold text-white text-[30px]">Welcome Back !</h1>
                 <p className="text-center w-[80%] text-white">To keep connected with us please login with your personal info</p>
-                <button type="submit" className="w-[80px] sm:w-[120px] h-9 bg-white border border-red-900 rounded-md text-red-900 " onClick={() => setswitchform(1)}>Sign In</button>
+                <button type="submit" className="w-[80px] sm:w-[120px] h-9 bg-white border border-yellow-600 rounded-md text-yellow-600 " onClick={() => setswitchform(1)}>Sign In</button>
               </div>
             </>
           ) : (
@@ -144,7 +144,7 @@ const Auth = () => {
               <div className="w-full h-[250px]   flex flex-col justify-around items-center">
                 <h1 className=" font-bold text-white text-[30px]">Hello ,Friend !</h1>
                 <p className="text-center w-[80%] text-white">Enter your personal details and start journey with us</p>
-                <button type="submit" className="w-[80px] sm:w-[120px] h-9 bg-white border border-red-900 rounded-md text-red-900" onClick={() => setswitchform(0)}>Sign Up</button>
+                <button type="submit" className="w-[80px] sm:w-[120px] h-9 bg-white border border-yellow-600 rounded-md text-yellow-600" onClick={() => setswitchform(0)}>Sign Up</button>
               </div>
             </>
           )}

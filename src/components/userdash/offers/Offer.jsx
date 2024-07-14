@@ -10,7 +10,7 @@ const Offer = () => {
   console.log(UserOffer)
   const Accepted = (moto_id,user_id,offer_maker)=>{
   console.log(`moto_id : ${moto_id} , user_id : ${user_id} , annouce_maker : ${offer_maker}`)
-    axios.get(`http://localhost/MY_PROJECTS/moto_project/Offer.php?res=${1}&moto_id=${moto_id}&user_id=${user_id}&offer_maker=${offer_maker}`).then((res)=>{
+    axios.get(`http://localhost/MY_PROJECTS/diamand/Offer.php?res=${1}&moto_id=${moto_id}&user_id=${user_id}&offer_maker=${offer_maker}`).then((res)=>{
       if (res.data) {
         toast.success("Offre Accepter !!")
         setcount(count === 0 ? 1 :0 )
@@ -18,7 +18,7 @@ const Offer = () => {
     })
   }
   const Refused = (moto_id,user_id,offer_maker)=>{
-    axios.get(`http://localhost/MY_PROJECTS/moto_project/Offer.php?res=${2}&moto_id=${moto_id}&user_id=${user_id}&offer_maker=${offer_maker}`).then((res)=>{
+    axios.get(`http://localhost/MY_PROJECTS/diamand/Offer.php?res=${2}&moto_id=${moto_id}&user_id=${user_id}&offer_maker=${offer_maker}`).then((res)=>{
       if (res.data) {
         toast.success("Offre Refuser !!")
         setcount(count === 0 ? 1 :0 )
@@ -34,12 +34,12 @@ const Offer = () => {
           UserOffer.map((offer)=>{
             return(
             
-                <nav className='h-[550px] w-[350px] flex flex-col insh rounded-md' key={offer.Id}>
+                <nav className='h-[550px] w-[350px] flex flex-col insh sh rounded-md' key={offer.Id}>
                   <Link to={"/Details"}>
-                    <img src={`http://localhost/MY_PROJECTS/moto_project/assets/${offer.Picture}`} alt="moto" className="transition-all duration-500 hover:scale-110 cursor-pointer"/>
+                    <img src={`http://localhost/MY_PROJECTS/diamand/assets/${offer.Picture}`} alt="moto" className="transition-all duration-500 hover:scale-110 cursor-pointer"/>
                   </Link>
                   <div className='flex flex-col gap-3 items-center'>
-                    <h1 className='font-bold text-[17px] text-red-500'>FROM : <span className='text-black'>{offer.Full_name}</span></h1>
+                    <h1 className='font-bold text-[17px] text-yellow-600'>FROM : <span className='text-black'>{offer.Full_name}</span></h1>
                     <p className='font-bold '>Offer : </p>
                     <p className='text-sm text-center'>{offer.Offer}</p>
                     {
@@ -50,9 +50,9 @@ const Offer = () => {
                       </div> 
                       : offer.Accepted === 1 
                       ? <div>
-                          <p className='font-bold '>Information Sur <span className='text-red-800'>{offer.Full_name}</span> </p>
-                          <p className='font-bold '>Email : <span className='text-red-800'>{offer.Email}</span></p>
-                          <p className='font-bold '>Phone : <span className='text-red-800'>{offer.Phone}</span></p>
+                          <p className='font-bold '>Information Sur <span className='text-yellow-600'>{offer.Full_name}</span> </p>
+                          <p className='font-bold '>Email : <span className='text-yellow-600'>{offer.Email}</span></p>
+                          <p className='font-bold '>Phone : <span className='text-yellow-600'>{offer.Phone}</span></p>
                         </div> 
                       : <button  className="w-[120px] h-11 insh rounded-md flex justify-center items-center">Refuser</button>
                     }
@@ -62,7 +62,7 @@ const Offer = () => {
           })
         }
        
-      </section>  :<h1 className='mt-10 text-center font-bold text-red-800 textsh'>Il'ya aucune Offer pour l'instant</h1>
+      </section>  :<h1 className='mt-10 text-center font-bold text-yellow-600 textsh'>Il'ya aucune Offer pour l'instant</h1>
     }
     </>
     

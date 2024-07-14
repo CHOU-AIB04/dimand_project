@@ -64,7 +64,7 @@ function App() {
       const Id = window.sessionStorage.getItem("token");
       try {
         const Iddecryte = decryptId(Id, secretKey);
-        axios.get(`http://localhost/MY_PROJECTS/moto_project/auth?id=${Iddecryte}`).then((res) => {
+        axios.get(`http://localhost/MY_PROJECTS/diamand/auth?id=${Iddecryte}`).then((res) => {
           if (res.data !== false) {
             console.log(res.data)
             setPersonalInfo(res.data[0])
@@ -84,7 +84,7 @@ function App() {
         // Handle decryption error, e.g., log the error or show a message to the user
       }
     }
-    axios.get("http://localhost/MY_PROJECTS/moto_project/Annoucement.php").then((res)=>{
+    axios.get("http://localhost/MY_PROJECTS/diamand/Annoucement.php").then((res)=>{
       setAllAnnounces(res.data)
       setFilter(res.data)
       window.localStorage.setItem("houses",JSON.stringify(res.data))

@@ -30,13 +30,13 @@ const Detail = () => {
           Form.append("user_id",user_id)
           Form.append("moto_Id",moto_Id)
           Form.append("msg",msg)
-          axios.post("http://localhost/MY_PROJECTS/moto_project/Offer.php",Form).then((res)=>{
+          axios.post("http://localhost/MY_PROJECTS/diamand/Offer.php",Form).then((res)=>{
             if (res.data) {
               toast.success("votre offre est envoyer")
               setcount(count === 1 ? 0 : 1)
               navigate("/")
             }else{
-              toast.error("offre deja")
+              toast.error("offre deja envoyer")
             }
           })
         } else {
@@ -53,17 +53,17 @@ const Detail = () => {
   <>
    <section className='mt-10 mb-10 w-[90%]  grid grid-cols-1 md:grid-cols-2 relative left-1/2 -translate-x-1/2 place-items-center'>
     <div className='self-start'>
-      <img src={`http://localhost/MY_PROJECTS/moto_project/assets/${moto_data[0].Picture}`} alt="moto" />
+      <img src={`http://localhost/MY_PROJECTS/diamand/assets/${moto_data[0].Picture}`} alt="moto" />
       </div>
     <div className=' h-full flex flex-col justify-evenly w-full gap-7'>
-      <h1 className='font-bold text-[25px] text-red-500'>{moto_data[0].Nom}</h1>
+      <h1 className='font-bold text-[25px] text-yellow-600'>{moto_data[0].Nom}</h1>
       {/* <p></p> */}
       <p className='font-bold'>{moto_data[0].Description}</p>
       <p className='text-gray-400'>model {moto_data[0].Model}</p>
-      <h2 className='text-[20px] font-bold'>{moto_data[0].Price}$</h2>
+      <h2 className='text-[20px] font-bold'>{moto_data[0].Price} Mad</h2>
       <div className='flex flex-col gap-5 w-full'>
         <textarea name="" id="msg" className='w-full min-h-[100px] max-h-[150px] focus:outline-none sh rounded-md pt-2 pl-2'></textarea>
-        <button className='h-10 w-44 rounded-md bg-white text-red-500 cursor-pointer sh transition-all duration-500 hover:bg-red-500 hover:text-white' onClick={HandleMsg}>make offer</button>
+        <button className='h-10 w-44 rounded-md bg-white text-yellow-600 cursor-pointer sh transition-all duration-500 hover:bg-yellow-600 hover:text-white' onClick={HandleMsg}>make offer</button>
         </div>
     </div>
    </section>
@@ -75,13 +75,13 @@ const Detail = () => {
       return(
         <nav className='h-[500px] w-[350px] flex flex-col sh rounded-md'>
           <div>
-            <img src={`http://localhost/MY_PROJECTS/moto_project/assets/${mot.Picture}`} alt="moto" className="transition-all duration-500 hover:scale-110 cursor-pointer"/>
+            <img src={`http://localhost/MY_PROJECTS/diamand/assets/${mot.Picture}`} alt="moto" className="transition-all duration-500 hover:scale-110 cursor-pointer"/>
           </div>
           <div className='flex flex-col gap-3 items-center'>
-            <h1 className='font-bold text-[30px] text-red-500'>{mot.Nom}</h1>
+            <h1 className='font-bold text-[25px] text-yellow-600'>{mot.Nom}</h1>
             <p className='line-clamp-3'>{mot.Description}</p>
             <h2 className='font-bold text-[20px]'>{mot.Price}$</h2>
-            <button className="w-[150px] h-8 sh rounded-md transition-all duration-500 hover:bg-red-500 hover:text-white" onClick={()=>{window.localStorage.setItem("id",mot.moto_Id),setID(mot.moto_Id),scrollTo({top:0,behavior:"smooth"})}}>Offrer</button>
+            <button className="w-[150px] h-8 sh rounded-md transition-all duration-500 hover:bg-yellow-600 hover:text-white" onClick={()=>{window.localStorage.setItem("id",mot.moto_Id),setID(mot.moto_Id),scrollTo({top:0,behavior:"smooth"})}}>Offrer</button>
           </div>
         </nav>
       )

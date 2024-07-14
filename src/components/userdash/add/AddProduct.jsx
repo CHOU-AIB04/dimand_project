@@ -28,7 +28,7 @@ const AddProduct = () => {
     Data.append("file",FormAdd.file)
     Data.append("description",FormAdd.description)
     Data.append("Id",PersonalInfo[0].Id)
-    axios.post("http://localhost/MY_PROJECTS/moto_project/AddAnnoucement.php",Data).then((res)=>{
+    axios.post("http://localhost/MY_PROJECTS/diamand/AddAnnoucement.php",Data).then((res)=>{
       console.log(res.data)
       toast.success("Votre Annonce est Public")
       navigate("/ClientDash/Allannouce")
@@ -38,22 +38,22 @@ const AddProduct = () => {
   }
   return (
    <>
-  <h1 className='text-center font-bold text-red-800 text-[30px] mt-10'>Ajouter Une Annonce</h1>
+  <h1 className='text-center font-bold text-yellow-600 text-[30px] mt-10'>Ajouter Une Annonce</h1>
     <form className='mt-10 relative left-1/2 -translate-x-1/2 w-[90%] space-y-5' onSubmit={Annouce}>
       <div className='flex flex-col md:flex-row justify-between items-center'>
         <div className='flex flex-col gap-2 w-full md:w-[40%]'>
           <label htmlFor="" className='font-bold'>Nom</label>
-          <input type="text" name="nom" placeholder='Nom' id="" className='h-9 rounded-md border border-red-800 bg-transparent sh focus:outline-none pl-2' onChange={Change}/>
+          <input type="text" name="nom" placeholder='Nom' id="" className='h-9 rounded-md border border-yellow-600 bg-transparent sh focus:outline-none pl-2' onChange={Change}/>
         </div>
         <div className='flex flex-col gap-2 w-full md:w-[40%]'>
           <label htmlFor=""  className='font-bold'>Model</label>
-          <input type="text" name="model" id="" className='h-9 rounded-md border border-red-800 bg-transparent sh focus:outline-none pl-2' onChange={Change}/>
+          <input type="text" name="model" id="" className='h-9 rounded-md border border-yellow-600 bg-transparent sh focus:outline-none pl-2' onChange={Change}/>
         </div>
       </div>
       <div className='flex flex-col md:flex-row justify-between items-center'>
         <div className='flex flex-col gap-2 w-full md:w-[40%]'>
           <label htmlFor=""  className='font-bold'>Prix</label>
-          <input type={"number"} name="prix" id="" placeholder='En DH' className='h-9 rounded-md border border-red-800 bg-transparent sh focus:outline-none pl-2' onChange={Change}/>
+          <input type={"number"} name="prix" id="" placeholder='En DH' className='h-9 rounded-md border border-yellow-600 bg-transparent sh focus:outline-none pl-2' onChange={Change}/>
         </div>
         <div className='flex flex-col gap-2 w-full md:w-[40%]'>
           <label htmlFor=""  className='font-bold'>Photo</label>
@@ -62,9 +62,9 @@ const AddProduct = () => {
       </div>
       <div className='flex flex-col gap-2'>
           <label htmlFor="" className='font-bold'>Description</label>
-          <textarea name="description" id="" className='min-h-24 max-h-34 w-full rounded-md border border-red-800 bg-transparent sh focus:outline-none pl-2' onChange={Change}></textarea>
+          <textarea name="description" id="" className='min-h-24 max-h-34 w-full rounded-md border border-yellow-600 bg-transparent sh focus:outline-none pl-2' onChange={Change}></textarea>
       </div>
-      <button className='w-44 h-11 rounded-md  insh cursor-pointer bg-white text-red-800 transition-all duration-500 hover:bg-red-700 hover:text-white'>Annoncer</button>
+      <button className='w-44 h-11 rounded-md  insh cursor-pointer bg-white text-yellow-600 transition-all duration-500 hover:bg-yellow-600 hover:text-white'>Annoncer</button>
     </form>  
    </>
   )
